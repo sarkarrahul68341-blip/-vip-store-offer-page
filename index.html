@@ -110,126 +110,12 @@
                 </div>
             </div>
 
-            <!-- 3 VIRAL PHOTOS PREVIEW GRID (Aapki Teeno Photos Yahan Set Hain) -->
+            <!-- 3 VIRAL PHOTOS PREVIEW GRID (Updated with your repo filenames) -->
             <div>
                 <div class="flex items-center justify-between text-[11px] text-slate-400 font-semibold mb-1.5 px-0.5">
                     <span><i class="fa-solid fa-fire text-orange-500 mr-1"></i> Viral Collection Previews</span>
                     <span class="text-blue-400">HD Quality</span>
                 </div>
                 <div class="grid grid-cols-3 gap-2" onclick="redirectToBot()">
-                    <!-- Photo 1 -->
-                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
-                        <img src="photo1.jpg" alt="Viral Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+1'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
-                            <span class="text-[10px] font-bold text-amber-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">🔥 Viral #1</span>
-                        </div>
-                    </div>
-                    <!-- Photo 2 -->
-                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
-                        <img src="photo2.jpg" alt="Viral Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+2'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
-                            <span class="text-[10px] font-bold text-amber-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">✨ Hot #2</span>
-                        </div>
-                    </div>
-                    <!-- Photo 3 (Collage / Mosaic preview) -->
-                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
-                        <img src="photo3.jpg" alt="Viral Preview 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+3'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
-                            <span class="text-[10px] font-bold text-emerald-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">🚀 +50K VIP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Key Benefits Mini Pills -->
-            <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-300 font-medium pt-0.5">
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl py-2 px-2.5 flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                    <span>Direct Bot Access</span>
-                </div>
-                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl py-2 px-2.5 flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                    <span>Daily New Uploads</span>
-                </div>
-            </div>
-
-            <!-- Primary CTA Button -->
-            <div class="pt-1">
-                <button onclick="redirectToBot()" class="join-vip-btn w-full py-3.5 px-5 rounded-xl font-display font-bold text-white text-base tracking-wide flex items-center justify-center gap-2.5 cursor-pointer">
-                    <i class="fa-brands fa-telegram text-xl"></i>
-                    <span>Join VIP Bot Now</span>
-                    <i class="fa-solid fa-arrow-right text-sm"></i>
-                </button>
-                <p class="text-[11px] text-slate-400 mt-2.5 flex items-center justify-center gap-1.5">
-                    <i class="fa-solid fa-lock text-emerald-400 text-[10px]"></i>
-                    <span>Secure &amp; Instant Access via Telegram</span>
-                </p>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Live Join Notification Toast -->
-    <div id="live-toast" class="fixed bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/95 border border-slate-700 text-slate-200 text-[11px] px-3.5 py-2 rounded-full shadow-xl flex items-center gap-2 transition-opacity duration-500 opacity-0 pointer-events-none whitespace-nowrap">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <span id="toast-text">Aman unlocked VIP Access just now</span>
-    </div>
-
-    <!-- Redirect Overlay Modal -->
-    <div id="redirect-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-xs p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-xs w-full p-6 text-center shadow-2xl space-y-3">
-            <div class="w-14 h-14 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-3xl mx-auto">
-                <i class="fa-brands fa-telegram fa-beat"></i>
-            </div>
-            <h3 class="font-display font-bold text-lg text-white">Connecting to VIP Bot...</h3>
-            <p class="text-xs text-slate-400">
-                Opening Telegram automatically. Tap below if it doesn't open.
-            </p>
-            <a id="direct-bot-anchor" href="https://t.me/ViralcontentVIP1_bot" class="inline-block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-3 px-4 rounded-xl mt-2">
-                Open Telegram Now
-            </a>
-        </div>
-    </div>
-
-    <script>
-        const TELEGRAM_BOT_LINK = "https://t.me/ViralcontentVIP1_bot";
-
-        function redirectToBot() {
-            const modal = document.getElementById('redirect-modal');
-            const anchor = document.getElementById('direct-bot-anchor');
-            anchor.href = TELEGRAM_BOT_LINK;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-
-            setTimeout(() => {
-                window.location.href = TELEGRAM_BOT_LINK;
-            }, 500);
-        }
-
-        let timeLeft = 299;
-        const timerEl = document.getElementById('countdown-timer');
-        setInterval(() => {
-            if (timeLeft <= 0) timeLeft = 299;
-            const mins = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-            const secs = String(timeLeft % 60).padStart(2, '0');
-            timerEl.textContent = `${mins}:${secs}`;
-            timeLeft--;
-        }, 1000);
-
-        const names = ["Rohan", "Vikram", "Aarav", "Karan", "Sahil", "Deepak", "Nikhil"];
-        const toastEl = document.getElementById('live-toast');
-        const toastText = document.getElementById('toast-text');
-
-        setInterval(() => {
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            toastText.textContent = `${randomName} joined VIP Bot • ₹99`;
-            toastEl.classList.remove('opacity-0');
-            setTimeout(() => {
-                toastEl.classList.add('opacity-0');
-            }, 3000);
-        }, 7000);
-    </script>
-</body>
-    </html>
+                    <!-- Photo 1
     
