@@ -3,123 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive VIP Access — ₹99 Only</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Exclusive VIP Access</title>
     <style>
-        body { background-color: #0b0f19; color: #f8fafc; font-family: sans-serif; -webkit-tap-highlight-color: transparent; }
-        .vip-card { background: linear-gradient(180deg, #161e31 0%, #111827 100%); border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.7); }
-        @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        .live-dot { animation: pulseGlow 1.5s infinite; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: #131b2e;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: #10b981;
+        }
+
+        .timer {
+            color: #f59e0b;
+        }
+
+        .vip-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header-section h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #34d399;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #9ca3af;
+            font-size: 18px;
+            margin-right: 8px;
+        }
+
+        .info-box {
+            background: rgba(29, 78, 216, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .previews-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .preview-card {
+            flex: 1;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            aspect-ratio: 3/4;
+        }
+
+        .preview-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-card .label {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 4px;
+            border-radius: 6px;
+            font-size: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            flex: 1;
+            background: #1e293b;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .join-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: 0.2s;
+            margin-bottom: 15px;
+        }
+
+        .join-btn:active {
+            transform: scale(0.98);
+        }
+
+        .footer-secure {
+            text-align: center;
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        .live-ticker {
+            background: #1e293b;
+            padding: 6px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 11px;
+            margin-top: 15px;
+            color: #34d399;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-3">
+<body>
 
-    <!-- Top Live Status & Timer Bar -->
-    <div class="w-full max-w-[400px] mb-2.5 flex items-center justify-between bg-slate-900/90 border border-slate-800 rounded-full px-3.5 py-1.5 text-[11px]">
-        <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot"></span>
-            <span>1,420 Online Now</span>
+    <div class="container">
+        <!-- Top Stats Bar -->
+        <div class="top-bar">
+            <span>🟢 1,420 Online Now</span>
+            <span class="timer">⏳ Offer Ends: 04:53</span>
         </div>
-        <div class="text-amber-400 font-bold flex items-center gap-1">
-            <i class="fa-solid fa-clock text-[10px]"></i>
-            <span>Offer Ends: <span id="countdown" class="font-mono">04:59</span></span>
-        </div>
-    </div>
 
-    <!-- MAIN CARD -->
-    <main class="vip-card w-full max-w-[400px] rounded-3xl p-5 space-y-4 relative overflow-hidden">
-        
-        <!-- Badge & Header -->
-        <div class="text-center relative">
-            <div class="absolute top-0 right-0 bg-amber-400/20 border border-amber-400/40 text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                <i class="fa-solid fa-crown"></i> VIP
-            </div>
-            <div class="inline-block bg-blue-500/20 text-blue-300 text-[10px] font-bold px-3 py-0.5 rounded-full mb-1">
-                ⚡ Instant Delivery
-            </div>
-            <h1 class="text-2xl font-black text-white">Exclusive VIP Access</h1>
-            <div class="mt-1 flex items-center justify-center gap-2">
-                <span class="text-slate-400 line-through text-base font-bold">₹499</span>
-                <span class="text-3xl font-black text-emerald-400">₹99 Only</span>
+        <!-- Header -->
+        <div class="header-section">
+            <div class="vip-badge">👑 VIP VAULT</div>
+            <h1>Exclusive VIP Access</h1>
+            <div>
+                <span class="old-price">₹499</span>
+                <span class="price">₹99 Only</span>
             </div>
         </div>
 
-        <!-- Offer Highlight Box -->
-        <div class="bg-slate-900/90 border border-blue-500/30 rounded-2xl p-3 flex items-start gap-2.5">
-            <div class="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-                <i class="fa-brands fa-telegram text-base"></i>
-            </div>
-            <p class="text-xs text-slate-200 leading-relaxed font-medium">
-                <strong class="text-white">Premium Telegram Channel Access!</strong> 
-                <span class="text-amber-300">50,000+ HD Media & Daily Updates</span> Available Now. Join the VIP bot instantly at just <strong class="text-emerald-400">₹99! 🚀</strong>
-            </p>
+        <!-- Info Notice -->
+        <div class="info-box">
+            🚀 <strong>Premium Telegram Channel Access!</strong> 50,000+ HD Media & Daily Updates Available Now. Click below to join the VIP bot instantly at just ₹99!
         </div>
 
-        <!-- 3 Photos Preview Grid (Directly Using Your Photos) -->
-        <div>
-            <div class="text-[11px] text-slate-400 font-semibold mb-1.5 flex items-center justify-between">
-                <span><i class="fa-solid fa-fire text-orange-500"></i> Viral Collection Previews</span>
-                <span class="text-blue-400">HD Quality</span>
+        <!-- Previews Section with Your Photos -->
+        <div class="section-title">
+            <span>🔥 Viral Collection Previews</span>
+            <span style="font-size: 11px; color: #9ca3af;">HD Quality</span>
+        </div>
+
+        <div class="previews-container">
+            <!-- 1st Photo -->
+            <div class="preview-card">
+                <img src="photo1.jpg" alt="Viral #1">
+                <div class="label" style="color: #fbbf24;">🔥 Viral #1</div>
             </div>
-            <div class="grid grid-cols-3 gap-2" onclick="openModal()">
-                <!-- Photo 1 -->
-                <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer relative group">
-                    <img src="1000019977.jpg" alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+1'">
-                    <span class="absolute bottom-1.5 left-1.5 text-[9px] font-bold text-amber-300 bg-black/60 px-1.5 py-0.5 rounded">🔥 #1</span>
-                </div>
-                <!-- Photo 2 -->
-                <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer relative group">
-                    <img src="1000019980.jpg" alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+2'">
-                    <span class="absolute bottom-1.5 left-1.5 text-[9px] font-bold text-amber-300 bg-black/60 px-1.5 py-0.5 rounded">✨ #2</span>
-                </div>
-                <!-- Photo 3 -->
-                <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer relative group">
-                    <img src="1000019979.jpg" alt="Preview 3" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+3'">
-                    <span class="absolute bottom-1.5 left-1.5 text-[9px] font-bold text-emerald-300 bg-black/60 px-1.5 py-0.5 rounded">🚀 VIP</span>
-                </div>
+
+            <!-- 2nd Photo -->
+            <div class="preview-card">
+                <img src="photo2.jpg" alt="Hot #2">
+                <div class="label" style="color: #38bdf8;">✨ Hot #2</div>
+            </div>
+
+            <!-- 3rd Photo -->
+            <div class="preview-card">
+                <img src="photo3.jpg" alt="+50K VIP">
+                <div class="label" style="color: #ec4899;">🚀 +50K VIP</div>
             </div>
         </div>
 
-        <!-- Join Button -->
-        <button onclick="openModal()" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-3.5 rounded-xl text-sm shadow-lg flex items-center justify-center gap-2 cursor-pointer transition">
-            <i class="fa-brands fa-telegram text-lg"></i>
-            <span>Join VIP Bot Now</span>
-            <i class="fa-solid fa-arrow-right text-xs"></i>
-        </button>
-        <p class="text-[10px] text-center text-slate-400 flex items-center justify-center gap-1">
-            <i class="fa-solid fa-lock text-emerald-400"></i> Secure & Instant Access via Telegram
-        </p>
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-item">✅ Direct Bot Access</div>
+            <div class="feature-item">✅ Daily New Uploads</div>
+        </div>
 
-    </main>
+        <!-- CTA Button (Put your Telegram bot link here) -->
+        <a href="https://t.me/ViralcontentVIP1_bot" class="join-btn" target="_blank">
+            ✈️ Join VIP Bot Now →
+        </a>
 
-    <!-- Redirect Modal -->
-    <div id="modal" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-4 z-50">
-        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-xs w-full p-6 text-center space-y-3 shadow-2xl">
-            <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mx-auto">
-                <i class="fa-brands fa-telegram"></i>
-            </div>
-            <h3 class="font-bold text-base text-white">Connecting to VIP Bot...</h3>
-            <p class="text-xs text-slate-400">Opening Telegram automatically.</p>
-            <a href="https://t.me/ViralcontentVIP1_bot" class="block w-full bg-blue-600 text-white font-bold text-xs py-3 rounded-xl">Open Telegram Now</a>
+        <!-- Security footer -->
+        <div class="footer-secure">
+            🔒 Secure & Instant Access via Telegram
+        </div>
+
+        <!-- Live Ticker -->
+        <div class="live-ticker">
+            🟢 Nikhil joined VIP Bot · ₹99
         </div>
     </div>
 
-    <script>
-        const BOT_URL = "https://t.me/ViralcontentVIP1_bot";
-        function openModal() {
-            document.getElementById('modal').style.display = 'flex';
-            setTimeout(() => { window.location.href = BOT_URL; }, 500);
-        }
-        let time = 299;
-        setInterval(() => {
-            if (time <= 0) time = 299;
-            let m = String(Math.floor(time / 60)).padStart(2, '0');
-            let s = String(time % 60).padStart(2, '0');
-            document.getElementById('countdown').textContent = `${m}:${s}`;
-            time--;
-        }, 1000);
-    </script>
 </body>
 </html>
