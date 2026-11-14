@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram VIP Content - Special Offer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 12px;
+        }
+        .card {
+            background: #1e293b;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #334155;
+        }
+        .header {
+            background: #0f172a;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .avatar {
+            width: 42px;
+            height: 42px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .title-area h2 {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .title-area span {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .verified {
+            color: #38bdf8;
+            font-size: 14px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            background: #000;
+        }
+        .thumb {
+            aspect-ratio: 1;
+            background: #334155;
+            position: relative;
+            overflow: hidden;
+        }
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+        .duration {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            background: rgba(0,0,0,0.75);
+            font-size: 9px;
+            padding: 1px 3px;
+            border-radius: 3px;
+            color: #fff;
+        }
+        .content {
+            padding: 20px 16px;
+            text-align: center;
+        }
+        .badge-tag {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .desc {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+        .price-box {
+            background: #0f172a;
+            border: 1px dashed #475569;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+        .old-price {
+            font-size: 16px;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+        .new-price {
+            font-size: 26px;
+            font-weight: 800;
+            color: #facc15;
+        }
+        .features {
+            text-align: left;
+            font-size: 13px;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255,255,255,0.03);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .features div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            transition: background 0.2s;
+        }
+        .cta-btn:active {
+            transform: scale(0.98);
+        }
+        .footer-note {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Top Channel Header -->
+        <div class="header">
+            <div class="avatar">VIP</div>
+            <div class="title-area">
+                <h2>Telegram Premium <span class="verified">✔</span></h2>
+                <span>1099 photos, 50694 videos</span>
+            </div>
+        </div>
+
+        <!-- Thumbnail Grid Mockup -->
+        <div class="preview-grid">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt=""><span class="duration">0:29</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150" alt=""><span class="duration">2:58</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150" alt=""><span class="duration">0:38</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt=""><span class="duration">0:44</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt=""><span class="duration">1:16</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt=""><span class="duration">2:10</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150" alt=""><span class="duration">0:58</span></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150" alt=""><span class="duration">1:36</span></div>
+        </div>
+
+        <!-- Main Body -->
+        <div class="content">
+            <div class="badge-tag">🔥 Special Limited Offer</div>
+            <h1>50,000+ HD Content Bundle</h1>
+            <p class="desc">Instant access to private VIP channel & all media files.</p>
+
+            <div class="price-box">
+                <span class="old-price">₹499</span>
+                <span style="font-size: 20px; color: #94a3b8;">➔</span>
+                <span class="new-price">JUST ₹99</span>
+            </div>
+
+            <div class="features">
+                <div>✅ 50,000+ Verified HD Files</div>
+                <div>✅ Direct Access to Private Telegram</div>
+                <div>✅ One-time Payment (No Subscription)</div>
+            </div>
+
+            <a href="https://t.me/YOUR_TELEGRAM_USERNAME" class="cta-btn" target="_blank">SHOP NOW / JOIN NOW 👇</a>
+            
+            <div class="footer-note">Secure & Fast Delivery via Telegram</div>
+        </div>
+    </div>
+
+</body>
+                                                                                                                                                 </html>
 
