@@ -3,108 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Content Store - Exclusive Access</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    <title>Exclusive VIP Access — ₹99 Only</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
         }
+    </script>
+    <style>
         body {
             background-color: #0b0f19;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
         }
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background: #131b2e;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            border: 1px solid #1f293d;
-            text-align: center;
+        .vip-card {
+            background: linear-gradient(180deg, #161e31 0%, #111827 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(37, 99, 235, 0.15);
         }
-        .banner-container {
-            width: 100%;
-            background: #1a233a;
-            padding: 10px;
+        .join-vip-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            transition: all 0.2s ease;
         }
-        .banner-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            display: block;
+        .join-vip-btn:hover {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            transform: translateY(-1px);
         }
-        .content {
-            padding: 24px;
+        .join-vip-btn:active {
+            transform: scale(0.98);
         }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #f3f4f6;
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.25); }
         }
-        .price-tag {
-            font-size: 28px;
-            font-weight: bold;
-            color: #10b981;
-            margin: 15px 0;
-        }
-        p {
-            color: #9ca3af;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            background: linear-gradient(135deg, #1d4ed8, #1e40af);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
-        }
-        .footer-note {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #6b7280;
+        .live-dot {
+            animation: pulseGlow 1.5s infinite;
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-5">
 
-    <div class="container">
-        <!-- Banner Image Section (1.png) -->
-        <div class="banner-container">
-            <img src="1.png" alt="VIP Store Banner">
+    <!-- Top Live Status & Urgency Bar -->
+    <div class="w-full max-w-[420px] mb-2.5 flex items-center justify-between bg-slate-900/90 border border-slate-800 rounded-full px-3.5 py-1.5 text-[11px]">
+        <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot"></span>
+            <span><span id="online-count">1,420</span> Online Now</span>
         </div>
-
-        <div class="content">
-            <h1>Exclusive VIP Access</h1>
-            <div class="price-tag">₹99 Only</div>
-            <p>Get instant access to our premium collection, high-quality media packs, and daily updates directly via our bot.</p>
-            
-            <!-- Telegram Bot CTA Button -->
-            <a href="https://t.me/ViralcontentVIP1_bot" target="_blank" class="btn">Join VIP Bot Now</a>
-            
-            <div class="footer-note">Secure & Instant Access via Telegram</div>
+        <div class="text-amber-400 font-bold flex items-center gap-1">
+            <i class="fa-solid fa-clock text-[10px]"></i>
+            <span>Offer Ends: <span id="countdown-timer" class="font-mono">04:59</span></span>
         </div>
     </div>
 
+    <!-- MAIN VIP AD CARD -->
+    <main class="vip-card w-full max-w-[420px] rounded-3xl overflow-hidden">
+
+        <!-- Banner Header Section -->
+        <div class="p-5 text-center bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800 relative">
+            <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-md border border-amber-400/50 text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                <i class="fa-solid fa-crown"></i> VIP Vault
+            </div>
+
+            <div class="inline-flex items-center gap-1.5 bg-blue-500/15 border border-blue-400/30 text-blue-300 text-[11px] font-bold px-3 py-0.5 rounded-full mb-2">
+                <i class="fa-solid fa-bolt text-amber-400"></i> Instant Automated Delivery
+            </div>
+            <h1 class="font-display font-extrabold text-2xl sm:text-[26px] text-white tracking-tight">
+                Exclusive VIP Access
+            </h1>
+            <div class="mt-1 flex items-center justify-center gap-2.5">
+                <span class="text-slate-400 line-through font-bold text-lg">₹499</span>
+                <span class="font-display font-black text-3xl text-emerald-400 drop-shadow-[0_2px_10px_rgba(16,185,129,0.35)]">
+                    ₹99 Only
+                </span>
+            </div>
+        </div>
+
+        <!-- Content & Offer Highlight Section -->
+        <div class="p-5 space-y-4">
+
+            <!-- YOUR CUSTOM HIGHLIGHTED AD COPY BOX -->
+            <div class="bg-slate-900/90 border border-blue-500/30 rounded-2xl p-3.5 text-left relative overflow-hidden">
+                <div class="flex items-start gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
+                        <i class="fa-brands fa-telegram text-lg"></i>
+                    </div>
+                    <p class="text-xs sm:text-[13px] text-slate-200 leading-relaxed font-medium">
+                        <strong class="text-white font-bold">Premium Telegram Channel Access!</strong> 
+                        <span class="text-amber-300 font-semibold">50,000+ HD Media &amp; Daily Updates</span> Available Now. Click below to join the VIP bot instantly at just <strong class="text-emerald-400 font-bold">₹99! 🚀</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3 VIRAL PHOTOS PREVIEW GRID (Aapki Teeno Photos Yahan Set Hain) -->
+            <div>
+                <div class="flex items-center justify-between text-[11px] text-slate-400 font-semibold mb-1.5 px-0.5">
+                    <span><i class="fa-solid fa-fire text-orange-500 mr-1"></i> Viral Collection Previews</span>
+                    <span class="text-blue-400">HD Quality</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2" onclick="redirectToBot()">
+                    <!-- Photo 1 -->
+                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
+                        <img src="photo1.jpg" alt="Viral Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+1'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
+                            <span class="text-[10px] font-bold text-amber-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">🔥 Viral #1</span>
+                        </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
+                        <img src="photo2.jpg" alt="Viral Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+2'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
+                            <span class="text-[10px] font-bold text-amber-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">✨ Hot #2</span>
+                        </div>
+                    </div>
+                    <!-- Photo 3 (Collage / Mosaic preview) -->
+                    <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-slate-800 border border-slate-700 cursor-pointer group">
+                        <img src="photo3.jpg" alt="Viral Preview 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/300x400/1e293b/fbbf24?text=Photo+3'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2">
+                            <span class="text-[10px] font-bold text-emerald-300 bg-black/60 px-2 py-0.5 rounded-md backdrop-blur-xs">🚀 +50K VIP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Benefits Mini Pills -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-300 font-medium pt-0.5">
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl py-2 px-2.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    <span>Direct Bot Access</span>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl py-2 px-2.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                    <span>Daily New Uploads</span>
+                </div>
+            </div>
+
+            <!-- Primary CTA Button -->
+            <div class="pt-1">
+                <button onclick="redirectToBot()" class="join-vip-btn w-full py-3.5 px-5 rounded-xl font-display font-bold text-white text-base tracking-wide flex items-center justify-center gap-2.5 cursor-pointer">
+                    <i class="fa-brands fa-telegram text-xl"></i>
+                    <span>Join VIP Bot Now</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </button>
+                <p class="text-[11px] text-slate-400 mt-2.5 flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-lock text-emerald-400 text-[10px]"></i>
+                    <span>Secure &amp; Instant Access via Telegram</span>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Live Join Notification Toast -->
+    <div id="live-toast" class="fixed bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/95 border border-slate-700 text-slate-200 text-[11px] px-3.5 py-2 rounded-full shadow-xl flex items-center gap-2 transition-opacity duration-500 opacity-0 pointer-events-none whitespace-nowrap">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="toast-text">Aman unlocked VIP Access just now</span>
+    </div>
+
+    <!-- Redirect Overlay Modal -->
+    <div id="redirect-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-xs p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-xs w-full p-6 text-center shadow-2xl space-y-3">
+            <div class="w-14 h-14 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-brands fa-telegram fa-beat"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white">Connecting to VIP Bot...</h3>
+            <p class="text-xs text-slate-400">
+                Opening Telegram automatically. Tap below if it doesn't open.
+            </p>
+            <a id="direct-bot-anchor" href="https://t.me/ViralcontentVIP1_bot" class="inline-block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs py-3 px-4 rounded-xl mt-2">
+                Open Telegram Now
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const TELEGRAM_BOT_LINK = "https://t.me/ViralcontentVIP1_bot";
+
+        function redirectToBot() {
+            const modal = document.getElementById('redirect-modal');
+            const anchor = document.getElementById('direct-bot-anchor');
+            anchor.href = TELEGRAM_BOT_LINK;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            setTimeout(() => {
+                window.location.href = TELEGRAM_BOT_LINK;
+            }, 500);
+        }
+
+        let timeLeft = 299;
+        const timerEl = document.getElementById('countdown-timer');
+        setInterval(() => {
+            if (timeLeft <= 0) timeLeft = 299;
+            const mins = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+            const secs = String(timeLeft % 60).padStart(2, '0');
+            timerEl.textContent = `${mins}:${secs}`;
+            timeLeft--;
+        }, 1000);
+
+        const names = ["Rohan", "Vikram", "Aarav", "Karan", "Sahil", "Deepak", "Nikhil"];
+        const toastEl = document.getElementById('live-toast');
+        const toastText = document.getElementById('toast-text');
+
+        setInterval(() => {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            toastText.textContent = `${randomName} joined VIP Bot • ₹99`;
+            toastEl.classList.remove('opacity-0');
+            setTimeout(() => {
+                toastEl.classList.add('opacity-0');
+            }, 3000);
+        }, 7000);
+    </script>
 </body>
-</html>
+    </html>
+    
