@@ -3,363 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram VIP Content - Special Offer</title>
+    <title>VIP Content Store - Exclusive Access</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #0f172a;
+            background-color: #0b0f19;
             color: #ffffff;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 12px;
+            padding: 20px;
         }
-        .edit-bar {
+        .container {
             width: 100%;
-            max-width: 420px;
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 8px;
-        }
-        .edit-toggle-btn {
-            background: #334155;
-            color: #e2e8f0;
-            border: 1px solid #475569;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            cursor: pointer;
-        }
-        .card {
-            background: #1e293b;
-            width: 100%;
-            max-width: 420px;
+            max-width: 480px;
+            background: #131b2e;
             border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid #334155;
-        }
-        .header {
-            background: #0f172a;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid #334155;
-        }
-        .avatar {
-            width: 42px;
-            height: 42px;
-            background: #22c55e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            color: #ffffff;
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-        }
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .title-area h2 {
-            font-size: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .title-area span {
-            font-size: 12px;
-            color: #94a3b8;
-        }
-        .verified {
-            color: #38bdf8;
-            font-size: 14px;
-        }
-        .preview-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 4px;
-            background: #000;
-        }
-        .thumb {
-            aspect-ratio: 1;
-            background: #334155;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-        .upload-overlay {
-            display: none;
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            color: #fff;
-            font-size: 11px;
-            font-weight: 600;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid #1f293d;
             text-align: center;
-            padding: 4px;
         }
-        body.edit-mode .upload-overlay {
-            display: flex;
+        .banner-container {
+            width: 100%;
+            background: #1a233a;
+            padding: 10px;
         }
-        .duration {
-            position: absolute;
-            bottom: 3px;
-            right: 3px;
-            background: rgba(0,0,0,0.75);
-            font-size: 9px;
-            padding: 1px 3px;
-            border-radius: 3px;
-            color: #fff;
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
         }
         .content {
-            padding: 20px 16px;
-            text-align: center;
-        }
-        .badge-tag {
-            display: inline-block;
-            background: rgba(34, 197, 94, 0.15);
-            color: #4ade80;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
+            padding: 24px;
         }
         h1 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #f3f4f6;
         }
-        .desc {
-            font-size: 13px;
-            color: #cbd5e1;
-            margin-bottom: 16px;
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            color: #10b981;
+            margin: 15px 0;
         }
-        .price-box {
-            background: #0f172a;
-            border: 1px dashed #475569;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
+        p {
+            color: #9ca3af;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
-        .old-price {
-            font-size: 16px;
-            color: #94a3b8;
-            text-decoration: line-through;
-        }
-        .new-price {
-            font-size: 26px;
-            font-weight: 800;
-            color: #facc15;
-        }
-        .features {
-            text-align: left;
-            font-size: 13px;
-            color: #e2e8f0;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 8px;
-        }
-        .features div {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .cta-btn {
+        .btn {
             display: block;
             width: 100%;
-            background: #2563eb;
-            color: #ffffff;
-            text-decoration: none;
-            text-align: center;
             padding: 14px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            text-decoration: none;
             font-size: 16px;
-            font-weight: 700;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-        }
-        .link-editor {
-            display: none;
-            margin-top: 12px;
-            background: #0f172a;
-            padding: 10px;
+            font-weight: bold;
             border-radius: 8px;
-            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
         }
-        body.edit-mode .link-editor {
-            display: block;
-        }
-        .link-editor input {
-            width: 100%;
-            padding: 8px;
-            border-radius: 6px;
-            border: 1px solid #475569;
-            background: #1e293b;
-            color: #fff;
-            font-size: 12px;
-            margin-top: 5px;
+        .btn:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
         }
         .footer-note {
-            margin-top: 10px;
-            font-size: 11px;
-            color: #64748b;
-        }
-        input[type="file"] {
-            display: none;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #6b7280;
         }
     </style>
 </head>
 <body>
 
-    <div class="edit-bar">
-        <button class="edit-toggle-btn" onclick="toggleEditMode()" id="editBtn">📷 Set Photos & Link</button>
-    </div>
-
-    <input type="file" id="photoInput" accept="image/*" onchange="handleImageUpload(event)">
-
-    <div class="card">
-        <!-- Top Channel Header -->
-        <div class="header">
-            <div class="avatar" onclick="triggerUpload('avatarImg')">
-                <span id="avatarText">VIP</span>
-                <img id="avatarImg" style="display:none;" alt="">
-                <div class="upload-overlay">📷</div>
-            </div>
-            <div class="title-area">
-                <h2>Telegram Premium <span class="verified">✔</span></h2>
-                <span>1099 photos, 50694 videos</span>
-            </div>
+    <div class="container">
+        <!-- Banner Image Section -->
+        <div class="banner-container">
+            <img src="https://canva.link/1peplcbj3q725le" alt="VIP Store Banner">
         </div>
 
-        <!-- Thumbnail Grid -->
-        <div class="preview-grid">
-            <div class="thumb" onclick="triggerUpload('img1')"><img id="img1" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">0:29</span></div>
-            <div class="thumb" onclick="triggerUpload('img2')"><img id="img2" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">2:58</span></div>
-            <div class="thumb" onclick="triggerUpload('img3')"><img id="img3" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">0:38</span></div>
-            <div class="thumb" onclick="triggerUpload('img4')"><img id="img4" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">0:44</span></div>
-            <div class="thumb" onclick="triggerUpload('img5')"><img id="img5" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">1:16</span></div>
-            <div class="thumb" onclick="triggerUpload('img6')"><img id="img6" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">2:10</span></div>
-            <div class="thumb" onclick="triggerUpload('img7')"><img id="img7" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">0:58</span></div>
-            <div class="thumb" onclick="triggerUpload('img8')"><img id="img8" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=150" alt=""><div class="upload-overlay">📷 Photo</div><span class="duration">1:36</span></div>
-        </div>
-
-        <!-- Main Body -->
         <div class="content">
-            <div class="badge-tag">🔥 Special Limited Offer</div>
-            <h1>50,000+ HD Content Bundle</h1>
-            <p class="desc">Instant access to private VIP channel & all media files.</p>
-
-            <div class="price-box">
-                <span class="old-price">₹499</span>
-                <span style="font-size: 20px; color: #94a3b8;">➔</span>
-                <span class="new-price">JUST ₹99</span>
-            </div>
-
-            <div class="features">
-                <div>✅ 50,000+ Verified HD Files</div>
-                <div>✅ Direct Access to Private Telegram</div>
-                <div>✅ One-time Payment (No Subscription)</div>
-            </div>
-
-            <a href="https://t.me/YOUR_TELEGRAM_USERNAME" id="ctaLink" class="cta-btn" target="_blank">SHOP NOW / JOIN NOW 👇</a>
-
-            <div class="link-editor">
-                <label style="font-size:11px; color:#94a3b8;">Apna Telegram Link Yahan Dalein:</label>
-                <input type="text" id="tgInput" placeholder="https://t.me/your_channel" oninput="updateLink(this.value)">
-            </div>
+            <h1>Exclusive VIP Access</h1>
+            <div class="price-tag">₹99 Only</div>
+            <p>Get instant access to our premium collection, high-quality media packs, and daily updates directly via our bot.</p>
             
-            <div class="footer-note">Secure & Fast Delivery via Telegram</div>
+            <!-- Telegram Bot CTA Button -->
+            <a href="https://t.me/ViralcontentVIP1_bot" target="_blank" class="btn">Join VIP Bot Now</a>
+            
+            <div class="footer-note">Secure & Instant Access via Telegram</div>
         </div>
     </div>
 
-    <script>
-        let currentTargetId = null;
-
-        function toggleEditMode() {
-            document.body.classList.toggle('edit-mode');
-            const btn = document.getElementById('editBtn');
-            btn.textContent = document.body.classList.contains('edit-mode') ? '✅ Done' : '📷 Set Photos & Link';
-        }
-
-        function triggerUpload(imgId) {
-            if (!document.body.classList.contains('edit-mode')) return;
-            currentTargetId = imgId;
-            document.getElementById('photoInput').click();
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (!file || !currentTargetId) return;
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const imgEl = document.getElementById(currentTargetId);
-                imgEl.src = e.target.result;
-                imgEl.style.display = 'block';
-                if (currentTargetId === 'avatarImg') {
-                    document.getElementById('avatarText').style.display = 'none';
-                }
-                localStorage.setItem('saved_' + currentTargetId, e.target.result);
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function updateLink(val) {
-            if (!val) return;
-            document.getElementById('ctaLink').href = val;
-            localStorage.setItem('saved_tgLink', val);
-        }
-
-        window.onload = function() {
-            ['avatarImg', 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8'].forEach(id => {
-                const saved = localStorage.getItem('saved_' + id);
-                if (saved) {
-                    const el = document.getElementById(id);
-                    el.src = saved;
-                    el.style.display = 'block';
-                    if (id === 'avatarImg') document.getElementById('avatarText').style.display = 'none';
-                }
-            });
-            const savedLink = localStorage.getItem('saved_tgLink');
-            if (savedLink) {
-                document.getElementById('ctaLink').href = savedLink;
-                document.getElementById('tgInput').value = savedLink;
-            }
-        };
-    </script>
 </body>
-                                                                                                                                                                  </html>
-                
+</html>
