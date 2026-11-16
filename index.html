@@ -3,294 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive VIP Access - 50,000+ HD Video Vault</title>
+    <title>50,000+ Premium Video Bundle - VIP Access</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
-            background: radial-gradient(circle at top, #1e1b4b, #09090b);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0b0f19;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px;
+            padding: 15px;
         }
-        .banner-container {
-            background: linear-gradient(135deg, #09061d, #1c143f, #110d2c);
-            border: 2.5px solid rgba(6, 182, 212, 0.6);
-            border-radius: 24px;
-            padding: 26px 18px;
-            max-width: 480px;
+
+        .container {
             width: 100%;
-            text-align: center;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
-        }
-        .top-badge {
-            font-size: 12px;
-            font-weight: 700;
-            color: #f59e0b;
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            padding: 5px 12px;
+            max-width: 420px;
+            background: #131b2e;
             border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            padding: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border: 2px solid #f59e0b;
         }
-        h1 {
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .header-section h1 {
             font-size: 22px;
-            font-weight: 900;
-            color: #ffffff;
+            font-weight: 800;
+            color: #fbbf24;
+            text-transform: uppercase;
             line-height: 1.2;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
+            margin-bottom: 5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
-        .sub-title {
-            font-size: 15px;
-            font-weight: 800;
-            color: #38bdf8;
-            margin-bottom: 6px;
-            text-shadow: 0 0 10px rgba(56,189,248,0.5);
-        }
-        .desc {
-            font-size: 11px;
-            color: #cbd5e1;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-        
-        /* Live Timer Styling */
-        .timer-box {
-            background: rgba(239, 68, 68, 0.15);
-            border: 1.5px solid rgba(239, 68, 68, 0.4);
-            color: #f87171;
-            padding: 8px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            align-items: center;
-        }
-        .timer-box span {
-            background: rgba(239, 68, 68, 0.3);
-            padding: 2px 6px;
-            border-radius: 6px;
-            color: #ffffff;
+
+        .header-section p {
+            font-size: 12px;
+            color: #9ca3af;
         }
 
-        .content-flex {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 16px;
-            align-items: center;
-        }
-        .video-box {
-            flex: 1.3;
-            background: rgba(15, 23, 42, 0.95);
-            border: 2px solid rgba(56, 189, 248, 0.5);
+        /* Golden Glowing Frame for Video Grid */
+        .golden-frame {
+            border: 3px solid #f59e0b;
             border-radius: 14px;
             padding: 8px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
+            background: rgba(20, 15, 5, 0.6);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+            margin-bottom: 15px;
         }
-        .thumb {
-            background-size: cover;
-            background-position: center;
-            aspect-ratio: 16/11;
-            border-radius: 4px;
+
+        /* 10 Boxes Grid Layout (2 columns x 5 rows) */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .video-box {
+            background: #000000;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            overflow: hidden;
         }
-        
-        /* Sabhi 12 gharon mein HP.jpg, photo 2.jpg aur photo 3.jpg ka proper setup (khali boxes mein photo 3.jpg) */
-        .thumb:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HP.jpg'); }
-        .thumb:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
-        .thumb:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        
-        .thumb:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        .thumb:nth-child(5) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
-        .thumb:nth-child(6) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        
-        .thumb:nth-child(7) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        .thumb:nth-child(8) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
-        .thumb:nth-child(9) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        
-        .thumb:nth-child(10) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
-        .thumb:nth-child(11) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
-        .thumb:nth-child(12) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%203.jpg'); }
 
-        /* Centered Play Button */
-        .thumb::after {
-            content: '▶';
-            font-size: 8px;
-            color: #ffffff;
-            background: rgba(0, 0, 0, 0.7);
-            width: 16px;
-            height: 16px;
+        /* Red Play Button */
+        .play-btn {
+            width: 36px;
+            height: 36px;
+            background: #ff0000;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-shadow: 0 0 3px rgba(0,0,0,0.8);
+            box-shadow: 0 2px 8px rgba(255, 0, 0, 0.6);
         }
 
-        .features-box {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        .play-btn::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 12px solid #ffffff;
+            margin-left: 2px;
         }
-        .feature-chip {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(8px);
-            padding: 7px 8px;
-            border-radius: 8px;
-            font-size: 10px;
-            font-weight: 700;
-            color: #f8fafc;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+
+        /* Bottom Playback Bar inside each box */
+        .playback-bar {
+            position: absolute;
+            bottom: 4px;
+            left: 6px;
+            right: 6px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
         }
-        
-        .price-banner {
-            background: linear-gradient(90deg, #1e1b4b, #31103f, #1e1b4b);
-            border: 2px solid #ec4899;
-            border-radius: 50px;
-            padding: 10px 18px;
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+
+        .playback-progress {
+            width: 30%;
+            height: 100%;
+            background: #ff0000;
+            border-radius: 2px;
         }
-        .old-price {
-            font-size: 18px;
-            color: #cbd5e1;
-            text-decoration: line-through;
-            font-weight: 700;
-        }
-        .new-price {
-            font-size: 26px;
-            color: #facc15;
-            font-weight: 900;
-            text-shadow: 0 0 10px rgba(250,204,21,0.7);
-        }
-        
-        .download-btn {
+
+        .join-btn {
             display: block;
             width: 100%;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 900;
-            padding: 15px;
-            border-radius: 14px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 14px;
+            border-radius: 12px;
             text-decoration: none;
-            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 14px;
-            transition: transform 0.2s;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            margin-bottom: 10px;
         }
-        .download-btn:active {
-            transform: scale(0.98);
-        }
-        .footer-icons {
-            default: flex;
-            display: flex;
-            justify-content: space-around;
-            font-size: 9px;
-            color: #94a3b8;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 12px;
+
+        .footer-secure {
+            text-align: center;
+            font-size: 11px;
+            color: #9ca3af;
         }
     </style>
 </head>
 <body>
 
-    <div class="banner-container">
-        <div class="top-badge">🔥 Limited Time Digital Offer</div>
-        <h1>EXCLUSIVE VIP ACCESS</h1>
-        <div class="sub-title">50,000+ HD VIDEO VAULT</div>
-        <div class="desc">ALL-IN-ONE DIGITAL COLLECTION</div>
-
-        <!-- Live Countdown Timer -->
-        <div class="timer-box">
-            ⏰ Offer Ends In: <span id="countdown">14:59</span>
+    <div class="container">
+        <!-- Header -->
+        <div class="header-section">
+            <h1>50,000+ Premium Video Bundle</h1>
+            <p>Instant Access To HD Video Library</p>
         </div>
 
-        <div class="content-flex">
-            <!-- Thumbnails Grid -->
-            <div class="video-box">
-                <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
-                <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
-                <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
-                <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
+        <!-- Golden Frame with 10 Blank Video Boxes -->
+        <div class="golden-frame">
+            <div class="video-grid">
+                <!-- Box 1 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 2 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 3 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 4 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 5 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 6 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 7 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 8 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 9 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
+                <!-- Box 10 -->
+                <div class="video-box"><div class="play-btn"></div><div class="playback-bar"><div class="playback-progress"></div></div></div>
             </div>
-
-            <!-- Features Badges -->
-            <div class="features-box">
-                <div class="feature-chip">⚡ INSTANT DELIVERY</div>
-                <div class="feature-chip">📺 FULL HD QUALITY</div>
-                <div class="feature-chip">🔓 ONE-TIME ACCESS</div>
-                <div class="feature-chip">🛡️ 100% PRIVATE & SAFE</div>
-            </div>
         </div>
 
-        <!-- Price Section -->
-        <div class="price-banner">
-            <span class="old-price">₹499</span>
-            <span class="new-price">₹99/-</span>
-        </div>
+        <!-- CTA Button -->
+        <a href="https://t.me/ViralcontentVIP1_bot" class="join-btn" target="_blank">
+            ✈️ Join VIP Bot Now →
+        </a>
 
-        <!-- Telegram Bot Link Button -->
-        <div class="btn-wrap">
-            <a href="https://t.me/ViralcontentVIP1_bot" class="download-btn">DOWNLOAD NOW ➔</a>
-        </div>
-
-        <!-- Footer Trust Badges -->
-        <div class="footer-icons">
-            <span>🚀 FAST STREAM</span>
-            <span>📱 ALL DEVICES</span>
-            <span>🔒 PRIVATE</span>
-            <span>✅ VERIFIED</span>
+        <!-- Security footer -->
+        <div class="footer-secure">
+            🔒 100% Safe & Secure Instant Access via Telegram
         </div>
     </div>
-
-    <script>
-        let time = 14 * 60 + 59;
-        setInterval(() => {
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            document.getElementById('countdown').innerText = 
-                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-            if (time > 0) time--;
-        }, 1000);
-    </script>
 
 </body>
 </html>
