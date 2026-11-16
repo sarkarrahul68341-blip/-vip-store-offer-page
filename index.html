@@ -114,11 +114,25 @@
             align-items: center;
             position: relative;
             border: 1px solid rgba(255,255,255,0.15);
-            /* Sabhi 12 gharon mein HP.jpg set kar di gayi hai */
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HP.jpg');
         }
+        
+        /* Sirf pehle 3 khali gharon mein HP.jpg */
+        .thumb:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HP.jpg'); }
+        .thumb:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HP.jpg'); }
+        .thumb:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('HP.jpg'); }
+        
+        /* Baaki gharon mein purani photos */
+        .thumb:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(5) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
+        .thumb:nth-child(6) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(7) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
+        .thumb:nth-child(8) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(9) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
+        .thumb:nth-child(10) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(11) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo%202.jpg'); }
+        .thumb:nth-child(12) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
 
-        /* Perfectly Centered Play Button for all 12 boxes */
+        /* Centered Play Button */
         .thumb::after {
             content: '▶';
             font-size: 8px;
@@ -228,7 +242,7 @@
         </div>
 
         <div class="content-flex">
-            <!-- All 12 Video Thumbnails Grid with HP.jpg -->
+            <!-- Thumbnails Grid -->
             <div class="video-box">
                 <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
                 <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
