@@ -18,142 +18,192 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
+            padding: 10px;
         }
         .banner-container {
             background: linear-gradient(135deg, #09061d, #1c143f, #110d2c);
-            border: 2px solid rgba(6, 182, 212, 0.4);
-            border-radius: 20px;
-            padding: 25px 20px;
-            max-width: 440px;
+            border: 2.5px solid rgba(6, 182, 212, 0.6);
+            border-radius: 24px;
+            padding: 28px 22px;
+            max-width: 480px; /* Bada Size */
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
         }
         .top-badge {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             color: #f59e0b;
             background: rgba(245, 158, 11, 0.15);
             border: 1px solid rgba(245, 158, 11, 0.3);
-            padding: 4px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
         h1 {
-            font-size: 21px;
+            font-size: 23px;
             font-weight: 900;
             color: #ffffff;
             line-height: 1.2;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             letter-spacing: 0.5px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         .sub-title {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 800;
             color: #38bdf8;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-shadow: 0 0 10px rgba(56,189,248,0.5);
         }
         .desc {
-            font-size: 11px;
+            font-size: 12px;
             color: #cbd5e1;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             letter-spacing: 0.5px;
         }
+        
+        /* Live Timer Styling */
+        .timer-box {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1.5px solid rgba(239, 68, 68, 0.4);
+            color: #f87171;
+            padding: 8px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            align-items: center;
+        }
+        .timer-box span {
+            background: rgba(239, 68, 68, 0.3);
+            padding: 2px 6px;
+            border-radius: 6px;
+            color: #ffffff;
+        }
+
         .content-flex {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             margin-bottom: 18px;
             align-items: center;
         }
         .video-box {
-            flex: 1.2;
-            background: rgba(15, 23, 42, 0.9);
-            border: 1.5px solid rgba(56, 189, 248, 0.5);
-            border-radius: 12px;
-            padding: 8px;
+            flex: 1.3;
+            background: rgba(15, 23, 42, 0.95);
+            border: 2px solid rgba(56, 189, 248, 0.5);
+            border-radius: 14px;
+            padding: 10px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
+            gap: 6px;
         }
         .thumb {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
-            aspect-ratio: 16/10;
-            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 16/11;
+            border-radius: 5px;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.1);
         }
+        /* Yahan 12 gharon mein real images set karne ke liye aap apna image link ya 'photo1.jpg' dal sakti hain */
+        .thumb:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 2.jpg'); }
+        .thumb:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 3.jpg'); }
+        .thumb:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(5) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 2.jpg'); }
+        .thumb:nth-child(6) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 3.jpg'); }
+        .thumb:nth-child(7) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(8) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 2.jpg'); }
+        .thumb:nth-child(9) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 3.jpg'); }
+        .thumb:nth-child(10) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo1.jpg'); }
+        .thumb:nth-child(11) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 2.jpg'); }
+        .thumb:nth-child(12) { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('photo 3.jpg'); }
+
         .thumb::after {
             content: '▶';
-            font-size: 8px;
+            font-size: 9px;
             color: #ffffff;
+            background: rgba(0, 0, 0, 0.6);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-shadow: 0 0 4px rgba(0,0,0,0.8);
         }
+
         .features-box {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 7px;
         }
         .feature-chip {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(8px);
-            padding: 7px 8px;
-            border-radius: 8px;
-            font-size: 10px;
+            padding: 8px 10px;
+            border-radius: 9px;
+            font-size: 11px;
             font-weight: 700;
             color: #f8fafc;
             text-align: left;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
-        /* Exact Banner Style Price Box Matching Reference */
+        
         .price-banner {
             background: linear-gradient(90deg, #1e1b4b, #31103f, #1e1b4b);
             border: 2px solid #ec4899;
             border-radius: 50px;
-            padding: 10px 20px;
+            padding: 12px 20px;
             margin-bottom: 18px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+            gap: 18px;
+            box-shadow: 0 0 18px rgba(236, 72, 153, 0.5);
         }
         .old-price {
-            font-size: 18px;
+            font-size: 19px;
             color: #cbd5e1;
             text-decoration: line-through;
             font-weight: 700;
         }
         .new-price {
-            font-size: 26px;
+            font-size: 28px;
             color: #facc15;
             font-weight: 900;
-            text-shadow: 0 0 10px rgba(250,204,21,0.6);
+            text-shadow: 0 0 12px rgba(250,204,21,0.7);
         }
+        
         .download-btn {
             display: block;
             width: 100%;
             background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
             color: #ffffff;
-            font-size: 16px;
-            font-weight: 800;
-            padding: 15px;
+            font-size: 17px;
+            font-weight: 900;
+            padding: 16px;
             border-radius: 14px;
             text-decoration: none;
-            box-shadow: 0 6px 25px rgba(236, 72, 153, 0.5);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
             transition: transform 0.2s;
         }
         .download-btn:active {
@@ -162,25 +212,30 @@
         .footer-icons {
             display: flex;
             justify-content: space-around;
-            font-size: 9px;
+            font-size: 10px;
             color: #94a3b8;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 14px;
         }
     </style>
 </head>
 <body>
 
     <div class="banner-container">
-        <div class="top-badge">Limited Time Digital Offer</div>
+        <div class="top-badge">🔥 Limited Time Digital Offer</div>
         <h1>EXCLUSIVE VIP ACCESS</h1>
         <div class="sub-title">50,000+ HD VIDEO VAULT</div>
         <div class="desc">ALL-IN-ONE DIGITAL COLLECTION</div>
 
+        <!-- Live Countdown Timer -->
+        <div class="timer-box">
+            ⏰ Offer Ends In: <span id="countdown">14:59</span>
+        </div>
+
         <div class="content-flex">
-            <!-- Video Grid Thumbnail Preview -->
+            <!-- 12 Video Thumbnails Grid (Images Linked) -->
             <div class="video-box">
                 <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
                 <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
@@ -197,14 +252,14 @@
             </div>
         </div>
 
-        <!-- Matching Banner Price Section (₹499 and ₹99/-) -->
+        <!-- Price Section (₹499 and ₹99/-) -->
         <div class="price-banner">
             <span class="old-price">₹499</span>
             <span class="new-price">₹99/-</span>
         </div>
 
         <!-- Telegram Bot Link Button -->
-        <a href="https://t.me/ViralcontentVIP1_bot" class="download-btn">DOWNLOAD NOW</a>
+        <a href="https://t.me/ViralcontentVIP1_bot" class="download-btn">DOWNLOAD NOW ➔</a>
 
         <!-- Footer Trust Badges -->
         <div class="footer-icons">
@@ -214,6 +269,18 @@
             <span>✅ VERIFIED</span>
         </div>
     </div>
+
+    <script>
+        // Simple countdown timer script
+        let time = 14 * 60 + 59;
+        setInterval(() => {
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            document.getElementById('countdown').innerText = 
+                (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            if (time > 0) time--;
+        }, 1000);
+    </script>
 
 </body>
 </html>
